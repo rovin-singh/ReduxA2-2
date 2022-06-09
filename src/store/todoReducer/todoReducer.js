@@ -8,7 +8,15 @@ function todoReducer(state = { todos: [] }, { type, payload }) {
       };
     }
     case UPDATE_TODO: {
-      return state;
+      let newTodos = state.todos.map((todo) => {
+        if (todo.id === payload) {
+          todo.isCompleted = true;
+        } else {
+          console.log(todo.id, payload);
+        }
+        return todo;
+      });
+      return { ...state, todos: newTodos };
     }
     default:
       return state;

@@ -11,7 +11,6 @@ const TodoApp = () => {
     dispatch(add({ value: value, isCompleted: false }));
     ref.current.value = null;
   };
-  console.log(todos);
   return (
     <div style={{ margin: "20px" }}>
       <input ref={ref} type="text" placeholder="Type here.." />
